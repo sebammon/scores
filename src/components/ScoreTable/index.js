@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Slider, Table } from 'antd';
-import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
+import { MinusOutlined, PlusOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import './scoreTable.css';
 
 const marks = {
@@ -22,14 +22,19 @@ const columns = (props) => {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',
+            width: '35%',
             render: (name, record) => {
                 return (
                     <span>
                         {name}
-                        <span>
-                            <a>Edit</a>
-                            <a>Clear</a>
-                            <a onClick={handleDeleteClick(record.key)}>Delete</a>
+                        <span className={'button-container'}>
+                            <Button icon={<EditOutlined />} type={'link'} className={'action-button'} />
+                            <Button
+                                icon={<DeleteOutlined />}
+                                type={'link'}
+                                className={'action-button'}
+                                onClick={handleDeleteClick(record.key)}
+                            />
                         </span>
                     </span>
                 );
@@ -39,16 +44,12 @@ const columns = (props) => {
             title: 'Points',
             key: 'points',
             dataIndex: 'points',
+            width: '30%',
             render: (score) => {
                 return (
                     <div>
-                        <span style={{ marginRight: '1rem' }}>{score}</span>
-                        <Button
-                            style={{ marginRight: '0.1rem' }}
-                            shape={'circle'}
-                            type={'primary'}
-                            icon={<PlusOutlined />}
-                        />
+                        <span className={'score'}>{score}</span>
+                        <Button shape={'circle'} type={'primary'} icon={<PlusOutlined />} />
                         <Button type={'primary'} shape={'circle'} icon={<MinusOutlined />} />
                     </div>
                 );
