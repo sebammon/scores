@@ -31,47 +31,43 @@ const columns = (props) => {
             dataIndex: 'name',
             key: 'name',
             width: '35%',
-            render: (name, record) => {
-                return (
-                    <span>
-                        {name}
-                        <span className={'button-container'}>
-                            <Button icon={<EditOutlined />} type={'link'} className={'action-button'} />
-                            <Button
-                                icon={<DeleteOutlined />}
-                                type={'link'}
-                                className={'action-button'}
-                                onClick={handleDeleteClick(record.key)}
-                            />
-                        </span>
+            render: (name, record) => (
+                <span>
+                    {name}
+                    <span className={'button-container'}>
+                        <Button icon={<EditOutlined />} type={'link'} className={'action-button'} />
+                        <Button
+                            icon={<DeleteOutlined />}
+                            type={'link'}
+                            className={'action-button'}
+                            onClick={handleDeleteClick(record.key)}
+                        />
                     </span>
-                );
-            },
+                </span>
+            ),
         },
         {
             title: 'Points',
             key: 'points',
             dataIndex: 'points',
             width: '30%',
-            render: (score, record) => {
-                return (
-                    <div>
-                        <span className={'score'}>{score}</span>
-                        <Button
-                            shape={'circle'}
-                            type={'primary'}
-                            icon={<PlusOutlined />}
-                            onClick={handleScoreClick(record.key, 1)}
-                        />
-                        <Button
-                            type={'primary'}
-                            shape={'circle'}
-                            icon={<MinusOutlined />}
-                            onClick={handleScoreClick(record.key, -1)}
-                        />
-                    </div>
-                );
-            },
+            render: (score, record) => (
+                <div>
+                    <span className={'score'}>{score}</span>
+                    <Button
+                        shape={'circle'}
+                        type={'primary'}
+                        icon={<PlusOutlined />}
+                        onClick={handleScoreClick(record.key, 1)}
+                    />
+                    <Button
+                        type={'primary'}
+                        shape={'circle'}
+                        icon={<MinusOutlined />}
+                        onClick={handleScoreClick(record.key, -1)}
+                    />
+                </div>
+            ),
         },
         {
             title: 'Participation',
