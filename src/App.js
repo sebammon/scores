@@ -4,15 +4,9 @@ import './App.css';
 import { Typography } from 'antd';
 import ScoreTable from './components/ScoreTable';
 import ControlBar from './components/ControlBar';
+import { ID } from './utils';
 
 const { Title } = Typography;
-
-const ID = () => {
-    // Math.random should be unique because of its seeding algorithm.
-    // Convert it to base 36 (numbers + letters), and grab the first 9 characters
-    // after the decimal.
-    return '_' + Math.random().toString(36).substr(2, 9);
-};
 
 const App = () => {
     const [data, setData] = useState([]);
