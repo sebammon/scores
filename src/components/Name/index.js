@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Input, Typography } from 'antd';
+import { Button, Input, Typography, Popconfirm } from 'antd';
 import { DeleteOutlined, EditOutlined, SaveOutlined } from '@ant-design/icons';
 
 const { Title } = Typography;
@@ -53,13 +53,19 @@ const Name = (props) => {
                 ) : (
                     <Button onClick={handleEdit} icon={<EditOutlined />} type={'link'} className={'action-button'} />
                 )}
-                <Button
-                    style={{ color: 'red' }}
-                    icon={<DeleteOutlined />}
-                    type={'link'}
-                    className={'action-button'}
-                    onClick={handleDeleteClick(record.key)}
-                />
+                <Popconfirm
+                    title={'Delete this name?'}
+                    okText="Yes"
+                    cancelText="No"
+                    onConfirm={handleDeleteClick(record.key)}
+                >
+                    <Button
+                        style={{ color: 'red' }}
+                        icon={<DeleteOutlined />}
+                        type={'link'}
+                        className={'action-button'}
+                    />
+                </Popconfirm>
             </span>
         </div>
     );
