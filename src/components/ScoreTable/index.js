@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button, Slider, Table, Typography } from 'antd';
-import { MinusOutlined, PlusOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons';
+import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import './scoreTable.css';
+import Name from '../Name';
 
 const { Title } = Typography;
 
@@ -34,21 +35,7 @@ const columns = (props) => {
             key: 'name',
             width: '35%',
             render: (name, record) => (
-                <div>
-                    <Title level={2} className={'name'}>
-                        {name}
-                    </Title>
-                    <span className={'button-container'}>
-                        <Button icon={<EditOutlined />} type={'link'} className={'action-button'} />
-                        <Button
-                            style={{ color: 'red' }}
-                            icon={<DeleteOutlined />}
-                            type={'link'}
-                            className={'action-button'}
-                            onClick={handleDeleteClick(record.key)}
-                        />
-                    </span>
-                </div>
+                <Name {...props} name={name} record={record} handleDeleteClick={handleDeleteClick} />
             ),
         },
         {

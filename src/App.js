@@ -18,6 +18,7 @@ const App = () => {
             return [];
         }
     });
+    const [editingKey, setEditingKey] = useState();
 
     useEffect(() => {
         window.localStorage.setItem('data', JSON.stringify(data));
@@ -30,8 +31,10 @@ const App = () => {
             name: `Name ${len + 1}`,
             participation: 0,
             points: 0,
+            isNew: true,
         };
         setData((prev) => [...prev, sample]);
+        setEditingKey(sample.key);
     };
 
     const handleReset = () => {
@@ -61,6 +64,20 @@ const App = () => {
         setData(newData);
     };
 
+    const handleSave = (key, val) => {
+        const newData = [...data];
+        const idx = newData.findIndex((record) => record.key.toString() === key.toString());
+        const item = newData[idx];
+        newData.splice(idx, 1, { ...item, name: val, isNew: false });
+
+        setData(newData);
+        setEditingKey(undefined);
+    };
+
+    const handleEdit = (key) => {
+        setEditingKey(key);
+    };
+
     return (
         <div className={'container'}>
             <Title>Scores</Title>
@@ -70,6 +87,9 @@ const App = () => {
                 handleDelete={handleDelete}
                 handleScoreChange={handleScoreChange}
                 handleParticipatationChange={handleParticipatationChange}
+                handleSave={handleSave}
+                handleEdit={handleEdit}
+                editingKey={editingKey}
             />
         </div>
     );

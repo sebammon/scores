@@ -18,3 +18,7 @@
 .score {
     display: inline;
 }
+
+.name-input {
+    max-width: 60%;
+}
