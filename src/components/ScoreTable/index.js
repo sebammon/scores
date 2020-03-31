@@ -48,13 +48,15 @@ const columns = (props) => {
             width: '30%',
             render: (score, record) => (
                 <div>
-                    <Title
-                        style={{ fontWeight: 'bold', color: score > 0 ? 'green' : score < 0 ? 'red' : undefined }}
-                        level={2}
-                        className={'score'}
-                    >
-                        {score}
-                    </Title>
+                    <span className={'score-container'}>
+                        <Title
+                            style={{ fontWeight: 'bold', color: score > 0 ? 'green' : score < 0 ? 'red' : undefined }}
+                            level={2}
+                            className={'score'}
+                        >
+                            {score}
+                        </Title>
+                    </span>
                     <Button
                         shape={'circle'}
                         type={'primary'}

@@ -22,3 +22,8 @@
 .name-input {
     max-width: 60%;
 }
+
+.score-container {
+    display: inline-block;
+    width: 20%;
+}
