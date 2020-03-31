@@ -7,12 +7,12 @@ import Name from '../Name';
 const { Title } = Typography;
 
 const marks = {
-    0: <i style={{ fontSize: '1.5rem', color: 'red' }} className="fas fa-sad-tear"></i>,
+    0: <i style={{ fontSize: '1.5rem', color: 'red' }} className="fas fa-sad-tear" />,
     1: 1,
     2: 2,
     3: 3,
     4: 4,
-    5: <i style={{ fontSize: '1.5rem', color: 'green' }} className="fas fa-smile"></i>,
+    5: <i style={{ fontSize: '1.5rem', color: 'green' }} className="fas fa-smile" />,
 };
 
 const columns = (props) => {
@@ -71,7 +71,7 @@ const columns = (props) => {
                         <i
                             style={{ fontSize: '1.5rem', color: 'gold', marginLeft: '0.5rem' }}
                             className="fas fa-crown"
-                        ></i>
+                        />
                     )}
                 </div>
             ),
