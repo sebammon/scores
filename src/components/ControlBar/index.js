@@ -1,5 +1,5 @@
 import React from 'react';
-import { PlusOutlined } from '@ant-design/icons';
+import { PlusCircleOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import './controlBar.css';
 
@@ -14,7 +14,7 @@ const ControlBar = (props) => {
 
     return (
         <div>
-            <Button onClick={handleAddClick} type={'primary'} icon={<PlusOutlined />}>
+            <Button onClick={handleAddClick} type={'primary'} icon={<PlusCircleOutlined />}>
                 Name
             </Button>
             <div className={'right-container'}>
