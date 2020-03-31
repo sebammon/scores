@@ -33,7 +33,7 @@ const App = () => {
             points: 0,
             isNew: true,
         };
-        setData((prev) => [...prev, sample]);
+        setData((prev) => [...prev.map((item) => ({ ...item, isNew: false })), sample]);
         setEditingKey(sample.key);
     };
 
@@ -76,6 +76,7 @@ const App = () => {
 
     const handleEdit = (key) => {
         setEditingKey(key);
+        setData((prev) => prev.map((item) => ({ ...item, isNew: false })));
     };
 
     return (
