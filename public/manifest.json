@@ -1,6 +1,6 @@
 {
-    "short_name": "Scoring App",
-    "name": "Scoring app for students",
+    "short_name": "Scores",
+    "name": "Participation score for students",
     "icons": [
         {
             "src": "favicon.ico",
