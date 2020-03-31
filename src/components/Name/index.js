@@ -22,6 +22,12 @@ const Name = (props) => {
         props.handleEdit && props.handleEdit(record.key);
     };
 
+    const handleBlur = () => {
+        if (record.isNew && !value) {
+            handleSave();
+        }
+    };
+
     return (
         <div>
             {isEditing ? (
@@ -34,6 +40,7 @@ const Name = (props) => {
                     value={value}
                     onChange={handleChange}
                     onPressEnter={handleSave}
+                    onBlur={handleBlur}
                 />
             ) : (
                 <Title level={2} className={'name'}>

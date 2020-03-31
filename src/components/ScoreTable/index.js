@@ -16,6 +16,9 @@ const marks = {
 };
 
 const columns = (props) => {
+    const { data = [] } = props;
+    const max = data.reduce((max, curr) => (curr.points > max ? curr.points : max), 1);
+
     const handleDeleteClick = (key) => () => {
         props.handleDelete && props.handleDelete(key);
     };
@@ -64,6 +67,12 @@ const columns = (props) => {
                         icon={<MinusOutlined />}
                         onClick={handleScoreClick(record.key, -1)}
                     />
+                    {score === max && (
+                        <i
+                            style={{ fontSize: '1.5rem', color: 'gold', marginLeft: '0.5rem' }}
+                            className="fas fa-crown"
+                        ></i>
+                    )}
                 </div>
             ),
         },
