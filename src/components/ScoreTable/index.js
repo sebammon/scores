@@ -71,7 +71,7 @@ const columns = (props) => {
                     />
                     {score === max && (
                         <i
-                            style={{ fontSize: '1.5rem', color: 'gold', marginLeft: '0.5rem' }}
+                            style={{ fontSize: '2rem', color: 'gold', marginLeft: '0.5rem' }}
                             className="fas fa-crown"
                         />
                     )}
