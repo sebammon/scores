@@ -63,7 +63,7 @@ const App = () => {
 
     return (
         <div className={'container'}>
-            <Title>Scoring App</Title>
+            <Title>Scores</Title>
             <ControlBar handleAdd={handleAdd} handleReset={handleReset} />
             <ScoreTable
                 data={data}

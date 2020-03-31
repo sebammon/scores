@@ -13,3 +13,8 @@
 .score {
     margin-right: 1rem;
 }
+
+.name,
+.score {
+    display: inline;
+}

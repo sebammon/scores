@@ -1,15 +1,17 @@
 import React from 'react';
-import { Button, Slider, Table } from 'antd';
+import { Button, Slider, Table, Typography } from 'antd';
 import { MinusOutlined, PlusOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import './scoreTable.css';
 
+const { Title } = Typography;
+
 const marks = {
-    0: <i style={{ fontSize: '1.5rem' }} className="fas fa-sad-tear"></i>,
+    0: <i style={{ fontSize: '1.5rem', color: 'red' }} className="fas fa-sad-tear"></i>,
     1: 1,
     2: 2,
     3: 3,
     4: 4,
-    5: <i style={{ fontSize: '1.5rem' }} className="fas fa-smile"></i>,
+    5: <i style={{ fontSize: '1.5rem', color: 'green' }} className="fas fa-smile"></i>,
 };
 
 const columns = (props) => {
@@ -32,18 +34,21 @@ const columns = (props) => {
             key: 'name',
             width: '35%',
             render: (name, record) => (
-                <span>
-                    {name}
+                <div>
+                    <Title level={2} className={'name'}>
+                        {name}
+                    </Title>
                     <span className={'button-container'}>
                         <Button icon={<EditOutlined />} type={'link'} className={'action-button'} />
                         <Button
+                            style={{ color: 'red' }}
                             icon={<DeleteOutlined />}
                             type={'link'}
                             className={'action-button'}
                             onClick={handleDeleteClick(record.key)}
                         />
                     </span>
-                </span>
+                </div>
             ),
         },
         {
@@ -53,7 +58,13 @@ const columns = (props) => {
             width: '30%',
             render: (score, record) => (
                 <div>
-                    <span className={'score'}>{score}</span>
+                    <Title
+                        style={{ fontWeight: 'bold', color: score > 0 ? 'green' : score < 0 ? 'red' : undefined }}
+                        level={2}
+                        className={'score'}
+                    >
+                        {score}
+                    </Title>
                     <Button
                         shape={'circle'}
                         type={'primary'}
@@ -96,7 +107,7 @@ const ScoreTable = (props) => {
 
     return (
         <div className={'table-container'}>
-            <Table size={'middle'} pagination={false} columns={columns(props)} dataSource={data} />
+            <Table pagination={false} columns={columns(props)} dataSource={data} />
         </div>
     );
 };
