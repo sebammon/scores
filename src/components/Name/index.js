@@ -15,7 +15,13 @@ const Name = (props) => {
     };
 
     const handleSave = () => {
-        props.handleSave && props.handleSave(record.key, record.isNew && !value ? name : value);
+        let val = value;
+
+        if ((record.isNew && !value) || !value) {
+            val = name;
+        }
+
+        props.handleSave && props.handleSave(record.key, val.trim());
     };
 
     const handleEdit = () => {
