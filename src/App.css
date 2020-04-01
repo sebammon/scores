@@ -5,5 +5,11 @@
     padding-left: 1rem;
     margin-right: auto;
     margin-left: auto;
-    max-width: 80vw;
+    max-width: 95vw;
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 80vw;
+    }
 }
