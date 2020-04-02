@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Input, Typography, Popconfirm } from 'antd';
 import { DeleteOutlined, EditOutlined, SaveOutlined } from '@ant-design/icons';
+import './name.css';
 
 const { Title } = Typography;
 
@@ -53,7 +54,7 @@ const Name = (props) => {
                     {name}
                 </Title>
             )}
-            <span className={'button-container'}>
+            <div className={'button-container'}>
                 {isEditing ? (
                     <Button onClick={handleSave} icon={<SaveOutlined />} type={'link'} className={'action-button'} />
                 ) : (
@@ -72,7 +73,7 @@ const Name = (props) => {
                         className={'action-button'}
                     />
                 </Popconfirm>
-            </span>
+            </div>
         </div>
     );
 };

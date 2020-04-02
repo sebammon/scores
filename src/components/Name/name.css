@@ -1,0 +1,13 @@
+.action-button {
+    padding: 0.5%;
+}
+
+.name {
+    display: inline;
+    margin-right: 1.5rem;
+}
+
+.name-input {
+    max-width: 60%;
+    margin-right: 1rem;
+}

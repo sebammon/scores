@@ -52,29 +52,33 @@ const columns = (props) => {
             width: '30%',
             render: (score, record) => (
                 <div>
-                    <span className={'score-container'}>
+                    <div className={'score-container'}>
                         <Title
+                            className={'score'}
                             style={{ fontWeight: 'bold', color: score > 0 ? 'green' : score < 0 ? '#b90000' : 'grey' }}
                             level={2}
-                            className={'score'}
                         >
                             {score}
                         </Title>
-                    </span>
-                    <Button
-                        shape={'circle'}
-                        type={'primary'}
-                        icon={<PlusOutlined />}
-                        onClick={handleScoreClick(record.key, 1)}
-                    />
-                    <Button
-                        type={'primary'}
-                        shape={'circle'}
-                        icon={<MinusOutlined />}
-                        onClick={handleScoreClick(record.key, -1)}
-                    />
+                    </div>
+                    <div className={'button-container'} style={{ marginRight: '5%' }}>
+                        <Button
+                            shape={'circle'}
+                            type={'primary'}
+                            icon={<PlusOutlined />}
+                            onClick={handleScoreClick(record.key, 1)}
+                        />
+                        <Button
+                            type={'primary'}
+                            shape={'circle'}
+                            icon={<MinusOutlined />}
+                            onClick={handleScoreClick(record.key, -1)}
+                        />
+                    </div>
                     {score === max && (
-                        <i style={{ fontSize: '2rem', color: 'gold', marginLeft: '0.5rem' }} className="fas fa-crown" />
+                        <div className={'crown-container'}>
+                            <i style={{ fontSize: '2rem', color: 'gold' }} className="fas fa-crown" />
+                        </div>
                     )}
                 </div>
             ),

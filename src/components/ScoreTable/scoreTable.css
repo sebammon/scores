@@ -3,29 +3,20 @@
 }
 
 .button-container {
-    margin-left: 2rem;
-}
-
-.action-button {
-    padding: 0.5%;
-}
-
-.score {
-    margin-right: 1rem;
-}
-
-.name,
-.score {
-    display: inline;
-}
-
-.name-input {
-    max-width: 60%;
+    display: inline-block;
 }
 
 .score-container {
     display: inline-block;
-    min-width: 22%;
+    min-width: 20%;
+}
+
+.crown-container {
+    display: inline-block;
+}
+
+.score {
+    margin: 0 !important;
 }
 
 .face {
