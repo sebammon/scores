@@ -54,7 +54,7 @@ const columns = (props) => {
                 <div>
                     <span className={'score-container'}>
                         <Title
-                            style={{ fontWeight: 'bold', color: score > 0 ? 'green' : score < 0 ? 'red' : undefined }}
+                            style={{ fontWeight: 'bold', color: score > 0 ? 'green' : score < 0 ? '#b90000' : 'grey' }}
                             level={2}
                             className={'score'}
                         >
