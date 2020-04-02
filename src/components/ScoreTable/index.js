@@ -3,16 +3,20 @@ import { Button, Slider, Table, Typography } from 'antd';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import './scoreTable.css';
 import Name from '../Name';
+import face01 from './icons/face-01.svg';
+import face02 from './icons/face-02.svg';
+import face03 from './icons/face-03.svg';
+import face04 from './icons/face-04.svg';
+import face05 from './icons/face-05.svg';
 
 const { Title } = Typography;
 
 const marks = {
-    0: <i style={{ fontSize: '1.5rem', color: 'red' }} className="fas fa-sad-tear" />,
-    1: 1,
-    2: 2,
-    3: 3,
-    4: 4,
-    5: <i style={{ fontSize: '1.5rem', color: 'green' }} className="fas fa-smile" />,
+    0: <img className={'face'} src={face01} alt={'Face 01'} />,
+    1: <img className={'face'} src={face02} alt={'Face 02'} />,
+    2: <img className={'face'} src={face03} alt={'Face 03'} />,
+    3: <img className={'face'} src={face04} alt={'Face 04'} />,
+    4: <img className={'face'} src={face05} alt={'Face 05'} />,
 };
 
 const columns = (props) => {
@@ -70,10 +74,7 @@ const columns = (props) => {
                         onClick={handleScoreClick(record.key, -1)}
                     />
                     {score === max && (
-                        <i
-                            style={{ fontSize: '2rem', color: 'gold', marginLeft: '0.5rem' }}
-                            className="fas fa-crown"
-                        />
+                        <i style={{ fontSize: '2rem', color: 'gold', marginLeft: '0.5rem' }} className="fas fa-crown" />
                     )}
                 </div>
             ),
@@ -90,7 +91,7 @@ const columns = (props) => {
                         step={null}
                         defaultValue={0}
                         min={0}
-                        max={5}
+                        max={4}
                         value={score}
                         onChange={onParticipatationChange(record.key)}
                     />
