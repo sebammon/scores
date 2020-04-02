@@ -5,6 +5,7 @@ import { Typography } from 'antd';
 import ScoreTable from './components/ScoreTable';
 import ControlBar from './components/ControlBar';
 import { ID } from './utils';
+import logo from './logo.png';
 
 const { Title } = Typography;
 
@@ -80,18 +81,34 @@ const App = () => {
     };
 
     return (
-        <div className={'container'}>
-            <Title>Scores</Title>
-            <ControlBar handleAdd={handleAdd} handleReset={handleReset} />
-            <ScoreTable
-                data={data}
-                handleDelete={handleDelete}
-                handleScoreChange={handleScoreChange}
-                handleParticipatationChange={handleParticipatationChange}
-                handleSave={handleSave}
-                handleEdit={handleEdit}
-                editingKey={editingKey}
-            />
+        <div>
+            <div className={'top-bar'}>
+                <div className={'brand'}>
+                    <img className={'logo-img'} src={logo} alt={'Scores'} />
+                    <Title className={'brand-name'}>Scores</Title>
+                </div>
+                <div className={'about'}>
+                    <a href={'https://gitlab.com/sebammon/scores'} target={'_blank'} rel={'noopener noreferrer'}>
+                        <img
+                            className={'about-img'}
+                            src={'https://cdn.worldvectorlogo.com/logos/gitlab.svg'}
+                            alt={'GitLab'}
+                        />
+                    </a>
+                </div>
+            </div>
+            <div className={'container'}>
+                <ControlBar handleAdd={handleAdd} handleReset={handleReset} />
+                <ScoreTable
+                    data={data}
+                    handleDelete={handleDelete}
+                    handleScoreChange={handleScoreChange}
+                    handleParticipatationChange={handleParticipatationChange}
+                    handleSave={handleSave}
+                    handleEdit={handleEdit}
+                    editingKey={editingKey}
+                />
+            </div>
         </div>
     );
 };
