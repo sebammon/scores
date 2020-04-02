@@ -36,7 +36,7 @@ const Name = (props) => {
     };
 
     return (
-        <div>
+        <div className={'flex-container'}>
             {isEditing ? (
                 <Input
                     autoFocus={true}
