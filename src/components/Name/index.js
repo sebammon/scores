@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Input, Typography, Popconfirm } from 'antd';
 import { DeleteOutlined, EditOutlined, SaveOutlined } from '@ant-design/icons';
 
@@ -7,6 +7,12 @@ const { Title } = Typography;
 const Name = (props) => {
     const { record, name, handleDeleteClick, editingKey } = props;
     const [value, setValue] = useState();
+
+    useEffect(() => {
+        if (!record.isNew) {
+            setValue(name);
+        }
+    }, [name, record.isNew]);
 
     const isEditing = record.key === editingKey;
 
