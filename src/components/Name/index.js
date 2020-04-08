@@ -13,7 +13,7 @@ const Name = (props) => {
         if (!record.isNew) {
             setValue(name);
         }
-    }, [name, record.isNew]);
+    }, [name, record]);
 
     const isEditing = record.key === editingKey;
 
@@ -35,6 +35,12 @@ const Name = (props) => {
         }
     };
 
+    const handleEscape = (e) => {
+        if (e.keyCode === 27) {
+            props.handleSave(record.key, name);
+        }
+    };
+
     return (
         <div className={'flex-container'}>
             {isEditing ? (
@@ -48,6 +54,7 @@ const Name = (props) => {
                     onChange={handleChange}
                     onPressEnter={handleSave}
                     onBlur={handleBlur}
+                    onKeyDown={handleEscape}
                 />
             ) : (
                 <Title level={2} className={'name'}>
