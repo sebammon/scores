@@ -31,7 +31,7 @@ const columns = (props) => {
         props.handleScoreChange && props.handleScoreChange(key, val);
     };
 
-    const onParticipatationChange = (key) => (val) => {
+    const onParticipationChange = (key) => (val) => {
         props.handleParticipatationChange && props.handleParticipatationChange(key, val);
     };
 
@@ -97,7 +97,7 @@ const columns = (props) => {
                     min={0}
                     max={4}
                     value={score}
-                    onChange={onParticipatationChange(record.key)}
+                    onChange={onParticipationChange(record.key)}
                 />
             ),
         },

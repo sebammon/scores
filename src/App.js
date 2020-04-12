@@ -56,11 +56,11 @@ const App = () => {
         setData(newData);
     };
 
-    const handleParticipatationChange = (key, val) => {
+    const handleParticipationChange = (key, val) => {
         const newData = [...data];
         const idx = newData.findIndex((record) => record.key.toString() === key.toString());
         const item = newData[idx];
-        newData.splice(idx, 1, { ...item, participation: val });
+        newData.splice(idx, 1, { ...item, effort: val });
 
         setData(newData);
     };
@@ -103,7 +103,7 @@ const App = () => {
                     data={data}
                     handleDelete={handleDelete}
                     handleScoreChange={handleScoreChange}
-                    handleParticipatationChange={handleParticipatationChange}
+                    handleParticipatationChange={handleParticipationChange}
                     handleSave={handleSave}
                     handleEdit={handleEdit}
                     editingKey={editingKey}
