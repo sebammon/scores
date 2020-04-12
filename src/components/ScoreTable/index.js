@@ -89,6 +89,7 @@ const columns = (props) => {
             dataIndex: 'participation',
             render: (score, record) => (
                 <Slider
+                    style={{ marginRight: '1rem' }}
                     tipFormatter={null}
                     marks={marks}
                     step={null}
@@ -108,7 +109,12 @@ const ScoreTable = (props) => {
 
     return (
         <div className={'table-container'}>
-            <Table pagination={false} columns={columns(props)} dataSource={data} />
+            <Table
+                scroll={{ y: 'calc(100vh - 200px)' }}
+                pagination={false}
+                columns={columns(props)}
+                dataSource={data}
+            />
         </div>
     );
 };
