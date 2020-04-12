@@ -84,9 +84,9 @@ const columns = (props) => {
             ),
         },
         {
-            title: 'Participation',
-            key: 'participation',
-            dataIndex: 'participation',
+            title: 'Effort',
+            key: 'effort',
+            dataIndex: 'effort',
             render: (score, record) => (
                 <Slider
                     style={{ marginRight: '1rem' }}

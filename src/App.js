@@ -30,7 +30,7 @@ const App = () => {
         const sample = {
             key: ID(),
             name: `Name ${len + 1}`,
-            participation: 0,
+            effort: 0,
             points: 0,
             isNew: true,
         };
