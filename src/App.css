@@ -44,3 +44,7 @@
     display: inline !important;
     margin: 0 !important;
 }
+
+.ant-slider-track {
+    transition: width 1s ease 0s;
+}
