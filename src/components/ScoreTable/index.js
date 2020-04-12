@@ -88,18 +88,16 @@ const columns = (props) => {
             key: 'participation',
             dataIndex: 'participation',
             render: (score, record) => (
-                <div style={{ marginRight: '1rem' }}>
-                    <Slider
-                        tipFormatter={null}
-                        marks={marks}
-                        step={null}
-                        defaultValue={0}
-                        min={0}
-                        max={4}
-                        value={score}
-                        onChange={onParticipatationChange(record.key)}
-                    />
-                </div>
+                <Slider
+                    tipFormatter={null}
+                    marks={marks}
+                    step={null}
+                    defaultValue={0}
+                    min={0}
+                    max={4}
+                    value={score}
+                    onChange={onParticipatationChange(record.key)}
+                />
             ),
         },
     ];
