@@ -2,18 +2,13 @@
     margin-top: 0.5%;
 }
 
-.button-container,
-.action-button-container {
-    display: inline-block;
-}
-
 .button-container {
-    margin-right: 5%;
+    display: inline-block;
 }
 
 .score-container {
     display: inline-block;
-    min-width: 20%;
+    min-width: 120px;
 }
 
 .crown-container {
@@ -21,7 +16,9 @@
 }
 
 .score {
+    display: inline-block;
     margin: 0 !important;
+    min-width: 50px;
 }
 
 .face {
@@ -42,4 +39,10 @@
 .crown {
     font-size: 2rem;
     color: gold;
+}
+
+.score-cell {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }

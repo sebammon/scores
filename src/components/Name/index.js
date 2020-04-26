@@ -61,7 +61,7 @@ const Name = (props) => {
                     {name}
                 </Title>
             )}
-            <div className={'action-button-container'}>
+            <div className={'button-container'}>
                 {isEditing ? (
                     <Button onClick={handleSave} icon={<SaveOutlined />} type={'link'} className={'action-button'} />
                 ) : (

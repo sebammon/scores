@@ -51,7 +51,7 @@ const columns = (props) => {
             dataIndex: 'points',
             width: '30%',
             render: (score, record) => (
-                <div>
+                <div className={'score-cell'}>
                     <div className={'score-container'}>
                         <Title
                             className={'score'}
@@ -60,8 +60,13 @@ const columns = (props) => {
                         >
                             {score}
                         </Title>
+                        {score === max && (
+                            <div className={'crown-container'}>
+                                <i className={'fas fa-crown crown'} />
+                            </div>
+                        )}
                     </div>
-                    <div className={'button-container'}>
+                    <div>
                         <Button
                             shape={'circle'}
                             type={'primary'}
@@ -75,11 +80,6 @@ const columns = (props) => {
                             onClick={handleScoreClick(record.key, -1)}
                         />
                     </div>
-                    {score === max && (
-                        <div className={'crown-container'}>
-                            <i className={'fas fa-crown crown'} />
-                        </div>
-                    )}
                 </div>
             ),
         },
