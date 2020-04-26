@@ -2,11 +2,15 @@
     display: inline-block;
     margin-bottom: 0 !important;
     margin-right: 3%;
+    max-width: calc(97% - 64px);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .name-input {
-    max-width: 60%;
-    margin-right: 4%;
+    max-width: 65%;
+    margin-right: 2%;
 }
 
 .name-cell {
