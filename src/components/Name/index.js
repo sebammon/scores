@@ -42,7 +42,7 @@ const Name = (props) => {
     };
 
     return (
-        <div className={'flex-container'}>
+        <div className={'name-cell'}>
             {isEditing ? (
                 <Input
                     autoFocus={true}
@@ -63,9 +63,9 @@ const Name = (props) => {
             )}
             <div className={'button-container'}>
                 {isEditing ? (
-                    <Button onClick={handleSave} icon={<SaveOutlined />} type={'link'} className={'action-button'} />
+                    <Button onClick={handleSave} icon={<SaveOutlined />} type={'link'} />
                 ) : (
-                    <Button onClick={handleEdit} icon={<EditOutlined />} type={'link'} className={'action-button'} />
+                    <Button onClick={handleEdit} icon={<EditOutlined />} type={'link'} />
                 )}
                 <Popconfirm
                     title={'Delete this name?'}

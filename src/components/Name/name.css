@@ -1,13 +1,16 @@
-.action-button {
-    padding: 0.5%;
-}
-
 .name {
-    display: inline;
-    margin-right: 7%;
+    display: inline-block;
+    margin-bottom: 0 !important;
+    margin-right: 3%;
 }
 
 .name-input {
     max-width: 60%;
     margin-right: 4%;
+}
+
+.name-cell {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
 }
