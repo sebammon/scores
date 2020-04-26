@@ -55,13 +55,13 @@ const columns = (props) => {
                     <div className={'score-container'}>
                         <Title
                             className={'score'}
-                            style={{ fontWeight: 'bold', color: score > 0 ? 'green' : score < 0 ? '#b90000' : 'grey' }}
+                            style={{ color: score > 0 ? 'green' : score < 0 ? '#b90000' : 'grey' }}
                             level={2}
                         >
                             {score}
                         </Title>
                     </div>
-                    <div className={'button-container'} style={{ marginRight: '5%' }}>
+                    <div className={'button-container'}>
                         <Button
                             shape={'circle'}
                             type={'primary'}
@@ -89,7 +89,7 @@ const columns = (props) => {
             dataIndex: 'effort',
             render: (score, record) => (
                 <Slider
-                    style={{ marginTop: 0, marginBottom: '2.5rem', marginRight: '1rem' }}
+                    className={'effort-slider'}
                     tipFormatter={null}
                     marks={marks}
                     step={null}

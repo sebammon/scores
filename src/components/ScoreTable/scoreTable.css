@@ -2,8 +2,13 @@
     margin-top: 0.5%;
 }
 
-.button-container {
+.button-container,
+.action-button-container {
     display: inline-block;
+}
+
+.button-container {
+    margin-right: 5%;
 }
 
 .score-container {
@@ -26,4 +31,10 @@
 .ant-table tbody > tr > td {
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.effort-slider {
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    margin-right: 1rem;
 }
