@@ -48,7 +48,7 @@ const Name = (props) => {
                     autoFocus={true}
                     className={'name-input'}
                     defaultValue={record.isNew ? undefined : name}
-                    placeholder={record.isNew ? 'Enter name' : undefined}
+                    placeholder={record.isNew ? 'Name' : undefined}
                     allowClear={true}
                     value={value}
                     onChange={handleChange}
