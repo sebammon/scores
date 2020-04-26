@@ -89,7 +89,7 @@ const columns = (props) => {
             dataIndex: 'effort',
             render: (score, record) => (
                 <Slider
-                    style={{ marginRight: '1rem' }}
+                    style={{ marginTop: 0, marginBottom: '2.5rem', marginRight: '1rem' }}
                     tipFormatter={null}
                     marks={marks}
                     step={null}

@@ -22,3 +22,8 @@
 .face {
     width: 2.5rem;
 }
+
+.ant-table tbody > tr > td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
