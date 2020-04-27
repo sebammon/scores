@@ -110,7 +110,7 @@ const ScoreTable = (props) => {
     return (
         <div className={'table-container'}>
             <Table
-                scroll={{ y: 'calc(100vh - 200px)' }}
+                scroll={{ y: 'calc(100vh - 210px)' }}
                 pagination={false}
                 columns={columns(props)}
                 dataSource={data}
