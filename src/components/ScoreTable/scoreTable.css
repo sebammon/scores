@@ -46,3 +46,9 @@
     align-items: center;
     flex-wrap: wrap;
 }
+
+@media (max-width: 768px) {
+    .ant-table tbody > tr > td {
+        padding: 10px;
+    }
+}

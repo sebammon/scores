@@ -18,3 +18,14 @@
     align-items: flex-end;
     flex-wrap: wrap;
 }
+
+@media (max-width: 768px) {
+    .name {
+        max-width: 100%;
+        margin-right: 0;
+    }
+    .name-input {
+        max-width: 100%;
+        margin-right: 0;
+    }
+}
