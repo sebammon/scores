@@ -1,6 +1,6 @@
 {
-    "short_name": "Scores",
-    "name": "Participation score for students",
+    "name": "Scores",
+    "description": "Participation score for students",
     "icons": [
         {
             "src": "favicon.ico",
