@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Input, Typography, Popconfirm } from 'antd';
-import { DeleteOutlined, EditOutlined, SaveOutlined } from '@ant-design/icons';
+import { DeleteOutlined, EditOutlined, CheckOutlined, CloseOutlined } from '@ant-design/icons';
 import './name.css';
 
 const { Title } = Typography;
@@ -41,6 +41,10 @@ const Name = (props) => {
         }
     };
 
+    const handleCancel = () => {
+        props.handleSave(record.key, name);
+    };
+
     return (
         <div className={'name-cell'}>
             {isEditing ? (
@@ -63,7 +67,10 @@ const Name = (props) => {
             )}
             <div className={'button-container'}>
                 {isEditing ? (
-                    <Button onClick={handleSave} icon={<SaveOutlined />} type={'link'} />
+                    <React.Fragment>
+                        <Button onClick={handleSave} icon={<CheckOutlined />} type={'link'} />
+                        <Button onClick={handleCancel} icon={<CloseOutlined />} type={'link'} />
+                    </React.Fragment>
                 ) : (
                     <Button onClick={handleEdit} icon={<EditOutlined />} type={'link'} />
                 )}
