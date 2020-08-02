@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import 'antd/dist/antd.css';
 import './App.css';
+import './styles/animations.css';
 import { Typography } from 'antd';
 import ScoreTable from './components/ScoreTable';
 import ControlBar from './components/ControlBar';
