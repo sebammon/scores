@@ -19,7 +19,7 @@ const App = () => {
             return [];
         }
     });
-    const [editingKey, setEditingKey] = useState();
+    const [editingKey, setEditingKey] = useState('');
 
     useEffect(() => {
         window.localStorage.setItem('data', JSON.stringify(data));

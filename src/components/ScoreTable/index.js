@@ -60,12 +60,13 @@ const columns = (props) => {
                         >
                             {score}
                         </Title>
-                        <div className={`crown-container ${score === max ? 'show' : 'hide'}`}>
+                        <div className={`crown-container ${score === max ? 'show jello-horizontal' : 'hide'}`}>
                             <i className={'fas fa-crown crown'} />
                         </div>
                     </div>
                     <div>
                         <Button
+                            style={{ marginRight: '2px' }}
                             shape={'circle'}
                             type={'primary'}
                             icon={<PlusOutlined />}
