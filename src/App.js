@@ -27,10 +27,9 @@ const App = () => {
     }, [data]);
 
     const handleAdd = () => {
-        const len = data.length;
         const sample = {
             key: ID(),
-            name: `Name ${len + 1}`,
+            name: `Name ${data.length + 1}`,
             effort: 0,
             points: 0,
             isNew: true,
@@ -48,31 +47,25 @@ const App = () => {
         setData(newData);
     };
 
-    const handleScoreChange = (key, val) => {
+    const updateData = (key, updateFn) => {
         const newData = [...data];
         const idx = newData.findIndex((record) => record.key.toString() === key.toString());
         const item = newData[idx];
-        newData.splice(idx, 1, { ...item, points: item.points + val });
+        newData.splice(idx, 1, updateFn(item));
 
         setData(newData);
+    };
+
+    const handleScoreChange = (key, val) => {
+        updateData(key, (item) => ({ ...item, points: item.points + val }));
     };
 
     const handleParticipationChange = (key, val) => {
-        const newData = [...data];
-        const idx = newData.findIndex((record) => record.key.toString() === key.toString());
-        const item = newData[idx];
-        newData.splice(idx, 1, { ...item, effort: val });
-
-        setData(newData);
+        updateData(key, (item) => ({ ...item, effort: val }));
     };
 
     const handleSave = (key, val) => {
-        const newData = [...data];
-        const idx = newData.findIndex((record) => record.key.toString() === key.toString());
-        const item = newData[idx];
-        newData.splice(idx, 1, { ...item, name: val, isNew: false });
-
-        setData(newData);
+        updateData(key, (item) => ({ ...item, name: val, isNew: false }));
         setEditingKey(undefined);
     };
 
