@@ -5,7 +5,7 @@ import { Typography } from 'antd';
 import ScoreTable from './components/ScoreTable';
 import ControlBar from './components/ControlBar';
 import { ID } from './utils';
-import logo from './logo.png';
+import logo from './assets/logo.png';
 
 const { Title } = Typography;
 

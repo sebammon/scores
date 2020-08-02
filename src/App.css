@@ -43,3 +43,11 @@
 .ant-slider-track {
     transition: width 1s ease 0s;
 }
+
+.show {
+    visibility: visible;
+}
+
+.hide {
+    visibility: hidden;
+}

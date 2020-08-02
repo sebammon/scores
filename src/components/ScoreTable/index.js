@@ -3,11 +3,11 @@ import { Button, Slider, Table, Typography } from 'antd';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import './scoreTable.css';
 import Name from '../Name';
-import face01 from './icons/face-01.svg';
-import face02 from './icons/face-02.svg';
-import face03 from './icons/face-03.svg';
-import face04 from './icons/face-04.svg';
-import face05 from './icons/face-05.svg';
+import face01 from '../../assets/face-icons/face-01.svg';
+import face02 from '../../assets/face-icons/face-02.svg';
+import face03 from '../../assets/face-icons/face-03.svg';
+import face04 from '../../assets/face-icons/face-04.svg';
+import face05 from '../../assets/face-icons/face-05.svg';
 
 const { Title } = Typography;
 
@@ -60,11 +60,9 @@ const columns = (props) => {
                         >
                             {score}
                         </Title>
-                        {score === max && (
-                            <div className={'crown-container'}>
-                                <i className={'fas fa-crown crown'} />
-                            </div>
-                        )}
+                        <div className={`crown-container ${score === max ? 'show' : 'hide'}`}>
+                            <i className={'fas fa-crown crown'} />
+                        </div>
                     </div>
                     <div>
                         <Button
