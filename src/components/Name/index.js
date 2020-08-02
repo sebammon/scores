@@ -29,12 +29,6 @@ const Name = (props) => {
         props.handleEdit && props.handleEdit(record.key);
     };
 
-    const handleBlur = () => {
-        if (record.isNew && !value) {
-            handleSave();
-        }
-    };
-
     const handleEscape = (e) => {
         if (e.keyCode === 27) {
             props.handleSave(record.key, name);
@@ -57,7 +51,6 @@ const Name = (props) => {
                     value={value}
                     onChange={handleChange}
                     onPressEnter={handleSave}
-                    onBlur={handleBlur}
                     onKeyDown={handleEscape}
                 />
             ) : (
