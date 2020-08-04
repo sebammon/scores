@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Button, Typography } from 'antd';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 
