@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button, Slider, Table, Typography } from 'antd';
-import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
+import { Slider, Table } from 'antd';
 import './ScoreTable.css';
 import Name from '../Name';
 import face01 from '../../assets/face-icons/face-01.svg';
@@ -8,8 +7,7 @@ import face02 from '../../assets/face-icons/face-02.svg';
 import face03 from '../../assets/face-icons/face-03.svg';
 import face04 from '../../assets/face-icons/face-04.svg';
 import face05 from '../../assets/face-icons/face-05.svg';
-
-const { Title } = Typography;
+import Score from '../Score';
 
 const marks = {
     0: <img className={'face'} src={face01} alt={'Face 01'} />,
@@ -51,35 +49,7 @@ const columns = (props) => {
             dataIndex: 'points',
             width: '30%',
             render: (score, record) => (
-                <div className={'score-cell'}>
-                    <div className={'score-container'}>
-                        <Title
-                            className={'score'}
-                            style={{ color: score > 0 ? 'green' : score < 0 ? '#b90000' : 'grey' }}
-                            level={2}
-                        >
-                            {score}
-                        </Title>
-                        <div className={`crown-container ${score === max ? 'show jello-horizontal' : 'hide'}`}>
-                            <i className={'fas fa-crown crown'} />
-                        </div>
-                    </div>
-                    <div>
-                        <Button
-                            style={{ marginRight: '2px' }}
-                            shape={'circle'}
-                            type={'primary'}
-                            icon={<PlusOutlined />}
-                            onClick={handleScoreClick(record.key, 1)}
-                        />
-                        <Button
-                            type={'primary'}
-                            shape={'circle'}
-                            icon={<MinusOutlined />}
-                            onClick={handleScoreClick(record.key, -1)}
-                        />
-                    </div>
-                </div>
+                <Score score={score} record={record} handleScoreClick={handleScoreClick} max={max} />
             ),
         },
         {
