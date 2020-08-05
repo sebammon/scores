@@ -1,6 +1,7 @@
 import React from 'react';
 import { PlusCircleOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
+import './ControlBar.css';
 
 const ControlBar = (props) => {
     const handleAddClick = () => {
@@ -12,7 +13,7 @@ const ControlBar = (props) => {
     };
 
     return (
-        <div>
+        <div className={'control-container'}>
             <Button onClick={handleAddClick} type={'primary'} icon={<PlusCircleOutlined />}>
                 Name
             </Button>
