@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Input, Typography, Popconfirm } from 'antd';
-import { DeleteOutlined, EditOutlined, CheckOutlined, CloseOutlined } from '@ant-design/icons';
+import { Button, Input, Popconfirm, Typography } from 'antd';
+import { CheckCircleFilled, CloseOutlined, DeleteOutlined, EditFilled } from '@ant-design/icons';
 import './Name.css';
 
 const { Title } = Typography;
@@ -60,25 +60,37 @@ const Name = (props) => {
             <div className={'button-container'}>
                 {isEditing ? (
                     <React.Fragment>
-                        <Button onClick={handleSave} icon={<CheckOutlined />} type={'link'} />
-                        <Button onClick={handleCancel} icon={<CloseOutlined />} type={'link'} />
+                        <Button
+                            style={{ color: 'grey' }}
+                            onClick={handleSave}
+                            icon={<CheckCircleFilled />}
+                            type={'link'}
+                        />
+                        <Button
+                            style={{ color: 'grey' }}
+                            onClick={handleCancel}
+                            icon={<CloseOutlined />}
+                            type={'link'}
+                        />
                     </React.Fragment>
                 ) : (
-                    <Button onClick={handleEdit} icon={<EditOutlined />} type={'link'} />
+                    <React.Fragment>
+                        <Button style={{ color: 'grey' }} onClick={handleEdit} icon={<EditFilled />} type={'link'} />
+                        <Popconfirm
+                            title={`Delete ${name}?`}
+                            okText="Yes"
+                            cancelText="No"
+                            onConfirm={handleDeleteClick(record.key)}
+                        >
+                            <Button
+                                style={{ color: 'grey' }}
+                                icon={<DeleteOutlined />}
+                                type={'link'}
+                                className={'action-button'}
+                            />
+                        </Popconfirm>
+                    </React.Fragment>
                 )}
-                <Popconfirm
-                    title={'Delete this name?'}
-                    okText="Yes"
-                    cancelText="No"
-                    onConfirm={handleDeleteClick(record.key)}
-                >
-                    <Button
-                        style={{ color: 'red' }}
-                        icon={<DeleteOutlined />}
-                        type={'link'}
-                        className={'action-button'}
-                    />
-                </Popconfirm>
             </div>
         </div>
     );
