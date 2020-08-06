@@ -60,34 +60,19 @@ const Name = (props) => {
             <div className={'button-container'}>
                 {isEditing ? (
                     <React.Fragment>
-                        <Button
-                            style={{ color: 'grey' }}
-                            onClick={handleSave}
-                            icon={<CheckCircleFilled />}
-                            type={'link'}
-                        />
-                        <Button
-                            style={{ color: 'grey' }}
-                            onClick={handleCancel}
-                            icon={<CloseOutlined />}
-                            type={'link'}
-                        />
+                        <Button onClick={handleSave} icon={<CheckCircleFilled />} type={'link'} />
+                        <Button onClick={handleCancel} icon={<CloseOutlined />} type={'link'} />
                     </React.Fragment>
                 ) : (
                     <React.Fragment>
-                        <Button style={{ color: 'grey' }} onClick={handleEdit} icon={<EditFilled />} type={'link'} />
+                        <Button onClick={handleEdit} icon={<EditFilled />} type={'link'} />
                         <Popconfirm
                             title={`Delete ${name}?`}
                             okText="Yes"
                             cancelText="No"
                             onConfirm={handleDeleteClick(record.key)}
                         >
-                            <Button
-                                style={{ color: 'grey' }}
-                                icon={<DeleteOutlined />}
-                                type={'link'}
-                                className={'action-button'}
-                            />
+                            <Button icon={<DeleteOutlined />} type={'link'} className={'action-button'} />
                         </Popconfirm>
                     </React.Fragment>
                 )}
