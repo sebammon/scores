@@ -47,7 +47,6 @@ const Name = (props) => {
                     className={'name-input'}
                     defaultValue={record.isNew ? undefined : name}
                     placeholder={record.isNew ? 'Name' : undefined}
-                    allowClear={true}
                     value={value}
                     onChange={handleChange}
                     onPressEnter={handleSave}
