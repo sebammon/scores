@@ -1,0 +1,24 @@
+.score-cell {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.score-container {
+    min-width: 110px;
+}
+
+.score {
+    font-size: 2rem !important;
+    margin: 0 0.5rem 0 0 !important;
+    min-width: 45px;
+}
+
+.crown-container {
+    margin-right: 1rem;
+}
+
+.crown {
+    font-size: 2rem;
+    color: gold;
+}

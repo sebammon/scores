@@ -2,25 +2,6 @@
     margin-top: 0.5%;
 }
 
-.button-container {
-    display: inline-block;
-}
-
-.score-container {
-    display: inline-block;
-    min-width: 110px;
-}
-
-.crown-container {
-    display: inline-block;
-}
-
-.score {
-    display: inline-block;
-    margin: 0 !important;
-    min-width: 50px;
-}
-
 .face {
     width: 2.5rem;
 }
@@ -30,25 +11,14 @@
     padding-bottom: 10px;
 }
 
-.effort-slider {
-    margin-top: 0;
-    margin-bottom: 2.5rem;
-    margin-right: 1rem;
-}
-
-.crown {
-    font-size: 2rem;
-    color: gold;
-}
-
-.score-cell {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
 @media (max-width: 768px) {
     .ant-table tbody > tr > td {
         padding: 10px;
     }
+}
+
+.effort-slider {
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    margin-right: 1rem;
 }
